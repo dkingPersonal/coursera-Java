@@ -6,7 +6,7 @@
  * @version (a version number or a date)
  */
 public class CaesarCipher {
-    public static String encrypt(String input, int key){
+    public String encrypt(String input, int key){
         StringBuilder encrypted = new StringBuilder(input);
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String shiftedAlphabet = alphabet.substring(key) + alphabet.substring(0,key);
@@ -21,9 +21,5 @@ public class CaesarCipher {
             }
         }
         return encrypted.toString();
-    }
-    
-    public static void main(String[] args){
-        System.out.println(encrypt("FIRST LEGION ATTACK EAST FLANK!",23));
     }
 }
