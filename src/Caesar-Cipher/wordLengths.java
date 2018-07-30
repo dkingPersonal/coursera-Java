@@ -10,7 +10,8 @@ import edu.duke.*;
 
 
 public class wordLengths {
-    static void countWordLengths(FileResource resource, int[] counts){
+    
+	void countWordLengths(FileResource resource, int[] counts){
        for(String s : resource.words()){
            s = s.toLowerCase();
     	   int wordLength = s.length();
@@ -38,7 +39,7 @@ public class wordLengths {
        }
     }
     
-    static int indexOfMax(int[] values) {
+    int indexOfMax(int[] values) {
     	int base = 0;
     	for (int k=0; k<values.length; k++) {
     		if(values[k] > values[base]) {
@@ -49,9 +50,10 @@ public class wordLengths {
     }
     
     public static void main(String[] args){
-        int[] counts = new int[25];
+        wordLengths wl = new wordLengths();
+    	int[] counts = new int[25];
         FileResource fr = new FileResource("C:\\textfiles\\Hello.txt");
-        countWordLengths(fr, counts);
-        System.out.println("\nwordLength with most occurences is "+indexOfMax(counts));
+        wl.countWordLengths(fr, counts);
+        System.out.println("\nwordLength with most occurences is "+wl.indexOfMax(counts));
     }
 }
